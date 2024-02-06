@@ -747,9 +747,9 @@
         @extend %text-uppercase;
     }
 
-    .first-letter-uppercase::first-letter
+    .first-letter-uppercase
     {
-        @extend %first-letter-uppercase::first-letter;
+        @extend %first-letter-uppercase;
     }
 
     .text-capitalize
