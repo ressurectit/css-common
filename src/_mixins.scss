@@ -1,0 +1,112 @@
+@use 'sass:math';
+@use 'vars';
+
+@mixin thin-scrollbar-color($color)
+{
+    .thin-scrollbar
+    {
+        scrollbar-color: var($color) transparent;
+
+        &::-webkit-scrollbar-thumb
+        {
+            background-color: var($color);
+        }
+
+        &::-webkit-scrollbar-track
+        {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar
+        {
+            background-color: transparent;
+        }
+    }
+}
+
+@function strip-unit($value)
+{
+    @return math.div($value, ($value * 0 + 1));
+}
+
+@function getSize($fontSize, $size)
+{
+    @return #{math.div($size, strip-unit($fontSize))}em;
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) 
+{
+    $u1: math.unit($min-vw);
+    $u2: math.unit($max-vw);
+    $u3: math.unit($min-font-size);
+    $u4: math.unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 
+    {
+        & 
+        {
+            font-size: $min-font-size;
+
+            @media screen and (min-width: $min-vw) 
+            {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+            @media screen and (min-width: $max-vw) 
+            {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}
+
+@mixin buildSizes($fontSize)
+{
+    --size-none: 0;
+    --size-xs: #{math.div(vars.$sizeXs, $fontSize)}em;
+    --size-sm: #{math.div(vars.$sizeSm, $fontSize)}em;
+    --size-md: #{math.div(vars.$sizeMd, $fontSize)}em;
+    --size-lg: #{math.div(vars.$sizeLg, $fontSize)}em;
+    --size-bg: #{math.div(vars.$sizeBg, $fontSize)}em;
+
+    --size-neg-xs: #{math.div(vars.$negXsWidth, $fontSize)}em;
+    --size-neg-sm: #{math.div(vars.$negSmWidth, $fontSize)}em;
+    --size-neg-md: #{math.div(vars.$negMdWidth, $fontSize)}em;
+    --size-neg-lg: #{math.div(vars.$negLgWidth, $fontSize)}em;
+
+    --size-font-xxs: #{math.div(vars.$fontXxs, $fontSize)}em;
+    --size-font-xs: #{math.div(vars.$fontXs, $fontSize)}em;
+    --size-font-sm: #{math.div(vars.$fontSm, $fontSize)}em;
+    --size-font-md: #{math.div(vars.$fontMd, $fontSize)}em;
+    --size-font-lg: #{math.div(vars.$fontLg, $fontSize)}em;
+    --size-font-xl: #{math.div(vars.$fontXl, $fontSize)}em;
+    --size-font-xxl: #{math.div(vars.$fontXxl, $fontSize)}em;
+    --size-font-xxxl: #{math.div(vars.$fontXxxl, $fontSize)}em;
+
+    --border-radius: #{math.div(vars.$borderRadius, $fontSize)}em;
+    --responsive-threshold-md: vars.$responsiveThresholdMd;
+
+    --size-1px: #{math.div(1, $fontSize)}em;
+    --size-2px: #{math.div(2, $fontSize)}em;
+    --size-3px: #{math.div(3, $fontSize)}em;
+    --size-4px: #{math.div(4, $fontSize)}em;
+    --size-5px: #{math.div(5, $fontSize)}em;
+    --size-6px: #{math.div(6, $fontSize)}em;
+    --size-7px: #{math.div(7, $fontSize)}em;
+    --size-8px: #{math.div(8, $fontSize)}em;
+    --size-9px: #{math.div(9, $fontSize)}em;
+    --size-10px: #{math.div(10, $fontSize)}em;
+    --size-11px: #{math.div(11, $fontSize)}em;
+    --size-12px: #{math.div(12, $fontSize)}em;
+    --size-13px: #{math.div(13, $fontSize)}em;
+    --size-14px: #{math.div(14, $fontSize)}em;
+    --size-15px: #{math.div(15, $fontSize)}em;
+    --size-16px: #{math.div(16, $fontSize)}em;
+    --size-17px: #{math.div(17, $fontSize)}em;
+    --size-18px: #{math.div(18, $fontSize)}em;
+    --size-19px: #{math.div(19, $fontSize)}em;
+    --size-20px: #{math.div(20, $fontSize)}em;
+    --size-21px: #{math.div(21, $fontSize)}em;
+    --size-22px: #{math.div(22, $fontSize)}em;
+    --size-23px: #{math.div(23, $fontSize)}em;
+    --size-24px: #{math.div(24, $fontSize)}em;
+}

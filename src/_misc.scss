@@ -1,0 +1,851 @@
+// ---------------------- MISCELANEOUS ----------------------
+%cursor-pointer
+{
+    cursor: pointer;
+}
+
+%cursor-not-allowed
+{
+    cursor: not-allowed;
+}
+
+%spread-text
+{
+    letter-spacing: 1px;
+}
+
+%text-center
+{
+    text-align: center;
+}
+
+%text-right
+{
+    text-align: right;
+}
+
+%text-left
+{
+    text-align: left;
+}
+
+%block
+{
+    display: block;
+}
+
+%hidden
+{
+    display: none;
+}
+
+%inline-block
+{
+    display: inline-block;
+}
+
+%flex
+{
+    display: flex;
+}
+
+%contents
+{
+    display: contents;
+}
+
+%flex-row
+{
+    display: flex;
+    flex-direction: row;
+}
+
+%flex-end
+{
+    justify-content: flex-end;
+}
+
+%flex-row-reverse
+{
+    flex-direction: row-reverse;
+}
+
+%flex-wrap
+{
+    flex-wrap: wrap;
+}
+
+%flex-column
+{
+    display: flex;
+    flex-direction: column;
+}
+
+%flex-0
+{
+    flex: 0;
+    min-width: 0;
+    min-height: 0;
+}
+
+%flex-1
+{
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+}
+
+%flex-2
+{
+    flex: 2;
+    min-width: 0;
+    min-height: 0;
+}
+
+%flex-3
+{
+    flex: 3;
+    min-width: 0;
+    min-height: 0;
+}
+
+%flex-4
+{
+    flex: 4;
+    min-width: 0;
+    min-height: 0;
+}
+
+%flex-5
+{
+    flex: 5;
+    min-width: 0;
+    min-height: 0;
+}
+
+%grid-subgrid-columns
+{
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+%grid-whole-row
+{
+    grid-column: 1 / -1;
+    min-width: 0;
+}
+
+%grid-first-cell
+{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    min-width: 0;
+    min-height: 0;
+}
+
+%align-self-center
+{
+    align-self: center;
+}
+
+%align-self-stretch
+{
+    align-self: stretch;
+}
+
+%align-content-start
+{
+    align-content: flex-start;
+}
+
+%align-items-center
+{
+    align-items: center;
+}
+
+%justify-self-center
+{
+    justify-self: center;
+}
+
+%justify-content-end
+{
+    justify-content: end;
+}
+
+%justify-content-center
+{
+    justify-content: center;
+}
+
+%justify-content-space-evenly
+{
+    justify-content: space-evenly;
+}
+
+%justify-content-space-around
+{
+    justify-content: space-around;
+}
+
+%justify-content-space-between
+{
+    justify-content: space-between;
+}
+
+%relative
+{
+    position: relative;
+}
+
+%absolute
+{
+    position: absolute;
+}
+
+%left-0
+{
+    left: 0;
+}
+
+%top-0
+{
+    top: 0;
+}
+
+%right-0
+{
+    right: 0;
+}
+
+%bottom-0
+{
+    bottom: 0;
+}
+
+%va-middle
+{
+    vertical-align: middle;
+}
+
+%va-top
+{
+    vertical-align: top;
+}
+
+%content-wrap
+{
+    white-space: normal;
+}
+
+%content-nowrap
+{
+    white-space: nowrap;
+}
+
+%max-width-none
+{
+    max-width: 0;
+}
+
+%min-width-none
+{
+    min-width: 0;
+}
+
+%min-height-none
+{
+    min-height: 0;
+}
+
+%min-dimensions-none
+{
+    min-width: 0;
+    min-height: 0;
+}
+
+%max-height-full
+{
+    max-height: 100%;
+}
+
+%half-width
+{
+    width: 50%;
+}
+
+%full-width
+{
+    width: 100%;
+}
+
+%full-height
+{
+    height: 100%;
+}
+
+%quarter-width
+{
+    width: 25%;
+}
+
+%third-width
+{
+    width: 33.33%;
+}
+
+%text-selection
+{
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+%semi-bold
+{
+    font-weight: 500;
+}
+
+%bold
+{
+    font-weight: bold;
+}
+
+%regular
+{
+    font-weight: 400;
+}
+
+%semi-thin
+{
+    font-weight: 300;
+}
+
+%ultra-thin
+{
+    font-weight: 200;
+}
+
+%italic
+{
+    font-style: italic;
+}
+
+%text-small-caps
+{
+    font-variant-caps: small-caps;
+}
+
+%text-uppercase
+{
+    text-transform: uppercase;
+}
+
+%first-letter-uppercase::first-letter
+{
+    text-transform: uppercase;
+}
+
+%text-capitalize
+{
+    text-transform: capitalize;
+}
+
+%text-ellipsis
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+%flexible-ellipsis
+{
+    min-width: 0;
+    min-height: 0;
+}
+
+%line-height-1em
+{
+    line-height: 1em;
+}
+
+%font-1em
+{
+    font-size: 1em;
+}
+
+%thin-scrollbar
+{
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar 
+    {
+        width: 3px;
+        height: 3px;
+    }
+}
+
+%overflow-hidden
+{
+    overflow: hidden;
+}
+
+%overflow-auto
+{
+    overflow: auto;
+}
+
+%overflow-vertical-auto
+{
+    overflow-y: auto;
+}
+
+%overflow-vertical-scroll
+{
+    overflow-y: scroll;
+}
+
+%table-container
+{
+    overflow-x: auto;
+}
+
+%notransition
+{
+    transition: none !important;
+}
+
+%transition-all-400
+{
+    transition: all 400ms;
+}
+
+@mixin misc-css
+{
+    // ---------------------- MISCELANEOUS ----------------------
+    .pointer-cursor,
+    .cursor-pointer
+    {
+        @extend %cursor-pointer;
+    }
+
+    .not-allowed-cursor,
+    .cursor-not-allowed
+    {
+        @extend %cursor-not-allowed;
+    }
+
+    .spread-text
+    {
+        @extend %spread-text;
+    }
+
+    .text-center
+    {
+        @extend %text-center;
+    }
+
+    .text-right
+    {
+        @extend %text-right;
+    }
+
+    .text-left
+    {
+        @extend %text-left;
+    }
+
+    .block
+    {
+        @extend %block;
+    }
+
+    .hidden
+    {
+        @extend %hidden;
+    }
+
+    .inline-block
+    {
+        @extend %inline-block;
+    }
+
+    .flex
+    {
+        @extend %flex;
+    }
+
+    .contents
+    {
+        @extend %contents;
+    }
+
+    .flex-row
+    {
+        @extend %flex-row;
+    }
+
+    .flex-end
+    {
+        @extend %flex-end;
+    }
+
+    .flex-row-reverse
+    {
+        @extend %flex-row-reverse;
+    }
+
+    .flex-wrap
+    {
+        @extend %flex-wrap;
+    }
+
+    .flex-column
+    {
+        @extend %flex-column;
+    }
+
+    .flex-0
+    {
+        @extend %flex-0;
+    }
+
+    .flex-1
+    {
+        @extend %flex-1;
+    }
+
+    .flex-2
+    {
+        @extend %flex-2;
+    }
+
+    .flex-3
+    {
+        @extend %flex-3;
+    }
+
+    .flex-4
+    {
+        @extend %flex-4;
+    }
+
+    .flex-5
+    {
+        @extend %flex-5;
+    }
+
+    .grid-subgrid-columns
+    {
+        @extend %grid-subgrid-columns;
+    }
+
+    .grid-whole-row
+    {
+        @extend %grid-whole-row;
+    }
+
+    .grid-first-cell
+    {
+        @extend %grid-first-cell;
+    }
+
+    .align-self-center
+    {
+        @extend %align-self-center;
+    }
+
+    .align-self-stretch
+    {
+        @extend %align-self-stretch;
+    }
+
+    .align-content-start
+    {
+        @extend %align-content-start;
+    }
+
+    .align-items-center
+    {
+        @extend %align-items-center;
+    }
+
+    .justify-self-center
+    {
+        @extend %justify-self-center;
+    }
+
+    .justify-content-end
+    {
+        @extend %justify-content-end;
+    }
+
+    .justify-content-center
+    {
+        @extend %justify-content-center;
+    }
+
+    .justify-content-space-evenly
+    {
+        @extend %justify-content-space-evenly;
+    }
+
+    .justify-content-space-around
+    {
+        @extend %justify-content-space-around;
+    }
+    
+    .justify-content-space-between
+    {
+        @extend %justify-content-space-between;
+    }
+
+    .relative
+    {
+        @extend %relative;
+    }
+
+    .absolute
+    {
+        @extend %absolute;
+    }
+
+    .left-0
+    {
+        @extend %left-0;
+    }
+
+    .top-0
+    {
+        @extend %top-0;
+    }
+
+    .right-0
+    {
+        @extend %right-0;
+    }
+
+    .bottom-0
+    {
+        @extend %bottom-0;
+    }
+
+    .va-middle
+    {
+        @extend %va-middle;
+    }
+
+    .va-top
+    {
+        @extend %va-top;
+    }
+
+    .content-wrap
+    {
+        @extend %content-wrap;
+    }
+
+    .content-nowrap
+    {
+        @extend %content-nowrap;
+    }
+
+    .max-width-none
+    {
+        @extend %max-width-none;
+    }
+
+    .min-width-none
+    {
+        @extend %min-width-none;
+    }
+
+    .min-height-none
+    {
+        @extend %min-height-none;
+    }
+
+    .min-dimensions-none
+    {
+        @extend %min-dimensions-none;
+    }
+
+    .max-height-full
+    {
+        @extend %max-height-full;
+    }
+
+    .half-width
+    {
+        @extend %half-width;
+    }
+
+    .full-width
+    {
+        @extend %full-width;
+    }
+
+    .full-height
+    {
+        @extend %full-height;
+    }
+
+    .quarter-width
+    {
+        @extend %quarter-width;
+    }
+
+    .third-width
+    {
+        @extend %third-width;
+    }
+
+    .text-selection
+    {
+        @extend %text-selection;
+    }
+
+    .semi-bold
+    {
+        @extend %semi-bold;
+    }
+
+    .bold
+    {
+        @extend %bold;
+    }
+
+    .regular
+    {
+        @extend %regular;
+    }
+
+    .semi-thin
+    {
+        @extend %semi-thin;
+    }
+
+    .ultra-thin
+    {
+        @extend %ultra-thin;
+    }
+
+    .italic
+    {
+        @extend %italic;
+    }
+
+    .text-small-caps
+    {
+        @extend %text-small-caps;
+    }
+
+    .text-uppercase
+    {
+        @extend %text-uppercase;
+    }
+
+    .first-letter-uppercase::first-letter
+    {
+        @extend %first-letter-uppercase::first-letter;
+    }
+
+    .text-capitalize
+    {
+        @extend %text-capitalize;
+    }
+
+    .text-ellipsis
+    {
+        @extend %text-ellipsis;
+    }
+
+    .flexible-ellipsis
+    {
+        @extend %flexible-ellipsis;
+    }
+
+    .line-height-1em
+    {
+        @extend %line-height-1em;
+    }
+
+    .font-1em
+    {
+        @extend %font-1em;
+    }
+
+    .thin-scrollbar
+    {
+        @extend %thin-scrollbar;
+    }
+
+    .overflow-hidden
+    {
+        @extend %overflow-hidden;
+    }
+
+    .overflow-auto
+    {
+        @extend %overflow-auto;
+    }
+
+    .overflow-vertical-auto
+    {
+        @extend %overflow-vertical-auto;
+    }
+
+    .overflow-vertical-scroll
+    {
+        @extend %overflow-vertical-scroll;
+    }
+
+    .table-container
+    {
+        @extend %table-container;
+    }
+
+    .notransition
+    {
+        @extend %notransition;
+    }
+
+    .transition-all-400
+    {
+        @extend %transition-all-400;
+    }
+
+    .file-upload.input-group
+    {
+        overflow: hidden;
+        position: relative;
+
+        &>input[type="text"]
+        {
+            font-size: 1em;
+            height: 34px;
+            padding: 6px 12px;
+            border-bottom-right-radius: 4px !important;
+            border-top-right-radius: 4px !important;
+            z-index: 0;
+        }
+
+        &>input[type="file"]
+        {
+            cursor: pointer;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    }
+
+    @media print
+    {
+        .print-hidden
+        {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+//---------------------- SIZING ----------------------
+$sizeXs: 4;
+$sizeSm: 10;
+$sizeMd: 15;
+$sizeLg: 20;
+$sizeBg: $sizeLg;
+
+$negXsWidth: -4;
+$negSmWidth: -10;
+$negMdWidth: -15;
+$negLgWidth: -20;
+
+$fontXxs: 10;
+$fontXs: 12;
+$fontSm: 14;
+$fontMd: 16;
+$fontLg: 18;
+$fontXl: 20;
+$fontXxl: 22;
+$fontXxxl: 28;
+
+$rootMinFontSize: 12px;
+$rootMaxFontSize: 16px;
+$rootMinFontSizeWidth: 500px;
+$rootMaxFontSizeWidth: 950px;
+
+$responsiveThresholdMd: 800px;
+
+$borderRadius: 4;
+
+$sizes: 
+(
+    none: none,
+    extra-small: xs,
+    small: sm,
+    medium: md,
+    large: lg,
+    big: bg
+);
