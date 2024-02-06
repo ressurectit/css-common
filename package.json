@@ -1,5 +1,5 @@
 {
-    "name": "@css/common",
+    "name": "@css-styles/common",
     "version": "0.0.0-placeholder",
     "description": "Css common classes and utilities",
     "type": "module",
