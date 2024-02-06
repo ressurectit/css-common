@@ -1,0 +1,43 @@
+{
+    "name": "@css/common",
+    "version": "0.0.0-placeholder",
+    "description": "Css common classes and utilities",
+    "type": "module",
+    "sideEffects": false,
+    "scripts": {
+        "version:placeholder": "replace-in-file /\\\"version\\\":\\s\\\".*?\\\"/g \"\\\"version\\\": \\\"0.0.0-placeholder\\\"\" package.json --isRegex",
+        "version:git": "ngv -e \"replace-in-file 0.0.0-placeholder $GIT_VERSION package.json && echo $GIT_VERSION > version.bak\"",
+        "version:build": "ngv -e \"echo $GIT_VERSION > version.bak\"",
+        "prepublishOnly": "npm run version:placeholder && npm run version:git",
+        "postpublish": "npm run version:placeholder",
+        "deploy": "npm publish --loglevel error",
+        "deploy:next": "npm publish --tag next --loglevel error"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ressurectit/css-common.git"
+    },
+    "keywords": [
+        "css",
+        "common",
+        "utilities"
+    ],
+    "author": "kukjevov",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ressurectit/css-common/issues"
+    },
+    "homepage": "https://github.com/ressurectit/css-common",
+    "devDependencies": {
+        "replace-in-file": "7.1.0",
+        "npm-git-version": "2.0.0"
+    },
+    "exports": {
+        "./package.json": {
+            "default": "./package.json"
+        },
+        ".": {
+            "sass": "./src/index.scss"
+        }
+    }
+}
