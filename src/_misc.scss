@@ -340,9 +340,12 @@
     text-transform: uppercase;
 }
 
-%first-letter-uppercase::first-letter
+%first-letter-uppercase
 {
-    text-transform: uppercase;
+    &::first-letter
+    {
+        text-transform: uppercase;
+    }
 }
 
 %text-capitalize
