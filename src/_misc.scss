@@ -233,14 +233,26 @@
     vertical-align: top;
 }
 
+%white-space-normal,
 %content-wrap
 {
     white-space: normal;
 }
 
+%white-space-nowrap,
 %content-nowrap
 {
     white-space: nowrap;
+}
+
+%white-space-pre
+{
+    white-space: pre;
+}
+
+%white-space-pre-wrap
+{
+    white-space: pre-wrap;
 }
 
 %max-width-none
@@ -642,14 +654,26 @@
         @extend %va-top;
     }
 
+    .white-space-normal,
     .content-wrap
     {
         @extend %content-wrap;
     }
 
+    .white-space-nowrap,
     .content-nowrap
     {
         @extend %content-nowrap;
+    }
+
+    .white-space-pre
+    {
+        @extend %white-space-pre;
+    }
+
+    .white-space-pre-wrap
+    {
+        @extend %white-space-pre-wrap;
     }
 
     .max-width-none

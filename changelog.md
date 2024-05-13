@@ -1,5 +1,20 @@
 # Changelog
 
+## Version 1.1.0 (2024-05-13)
+
+### Feature
+
+- **misc**
+    - new `%white-space-normal` alias placeholders for `%content-wrap`
+    - new `%white-space-nowrap` alias placeholders for `%content-nowrap`
+    - new `.white-space-normal` alias css class for `.content-wrap`
+    - new `.white-space-nowrap` alias css class for `.content-nowrap`
+    - new `%white-space-pre` placeholder for `white-space: pre;` css property
+    - new `%white-space-pre-wrap` placeholder for `white-space: pre-wrap;` css property
+    - new `.white-space-pre` placeholder for `white-space: pre;` css property
+    - new `.white-space-pre-wrap` placeholder for `white-space: pre-wrap;` css property
+
+
 ## Version 1.0.0 (2024-02-06)
 
 ### Feature
