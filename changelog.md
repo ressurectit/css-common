@@ -1,18 +1,51 @@
 # Changelog
 
+## Version 1.2.0 (2024-06-04)
+
+### Bug Fixes
+
+- fixed `%thin-scrollbar` placeholder, now using only native css not *webkit* specials
+- fixed `thin-scrollbar-color` mixin, now using only native css not *webkit* specials
+
+### Feature
+
+- **misc**
+    - new `%grid-subgrid-rows` placeholder for `display: grid;`, `grid-template-rows: subgrid;` css properties
+    - new `%justify-self-start` placeholder for `justify-self: start;` css property
+    - new `%justify-self-end` placeholder for `justify-self: end;` css property
+    - new `%justify-content-start` placeholder for `justify-content: start;` css property
+    - new `%justify-content-center` placeholder for `justify-content: center;` css property
+    - new `.grid-subgrid-rows` css class for `display: grid;`, `grid-template-rows: subgrid;` css properties
+    - new `.justify-self-start` css class for `justify-self: start;` css property
+    - new `.justify-self-end` css class for `justify-self: end;` css property
+    - new `.justify-content-start` css class for `justify-content: start;` css property
+    - new `.justify-content-center` css class for `justify-content: center;` css property
+- **mixins**
+    - updated `thin-scrollbar-color` mixin
+        - new second parameter with default value (transparent) for changing scrollbar background (track)
+    - updated `buildSizes` mixin
+        - now also defines `--color-transparent` css variable
+        - now also defines `--border-radius-small` css variable
+        - now also defines `--border-radius-medium` css variable
+    - new `css-reset` mixin
+        - allows reseting default browser styles
+- **vars**
+    - new `$borderRadiusSmall` variable with `2` as value
+    - new `$borderRadiusMedium` variable with `8` as value
+
 ## Version 1.1.0 (2024-05-13)
 
 ### Feature
 
 - **misc**
-    - new `%white-space-normal` alias placeholders for `%content-wrap`
-    - new `%white-space-nowrap` alias placeholders for `%content-nowrap`
+    - new `%white-space-normal` alias placeholder for `%content-wrap`
+    - new `%white-space-nowrap` alias placeholder for `%content-nowrap`
     - new `.white-space-normal` alias css class for `.content-wrap`
     - new `.white-space-nowrap` alias css class for `.content-nowrap`
     - new `%white-space-pre` placeholder for `white-space: pre;` css property
     - new `%white-space-pre-wrap` placeholder for `white-space: pre-wrap;` css property
-    - new `.white-space-pre` placeholder for `white-space: pre;` css property
-    - new `.white-space-pre-wrap` placeholder for `white-space: pre-wrap;` css property
+    - new `.white-space-pre` css class for `white-space: pre;` css property
+    - new `.white-space-pre-wrap` css class for `white-space: pre-wrap;` css property
 
 
 ## Version 1.0.0 (2024-02-06)
