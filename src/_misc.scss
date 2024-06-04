@@ -1,4 +1,9 @@
 // ---------------------- MISCELANEOUS ----------------------
+%root-scale
+{
+    font-size: 1rem;
+}
+
 %cursor-pointer
 {
     cursor: pointer;
@@ -457,6 +462,14 @@
 @mixin misc-css
 {
     // ---------------------- MISCELANEOUS ----------------------
+
+    .reset-scale,
+    .reset-zoom,
+    .root-scale
+    {
+        @extend %root-scale;
+    }
+
     .pointer-cursor,
     .cursor-pointer
     {

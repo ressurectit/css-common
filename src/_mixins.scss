@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use 'sass:math';
 @use 'vars';
 
@@ -44,35 +45,37 @@
     }
 }
 
-@mixin buildSizes($fontSize)
+@mixin buildSizes($fontSize, $dimensions: ())
 {
+    $dimensions: map.deep-merge(vars.$dimensions, $dimensions);
+
     --color-transparent: transparet;
 
     --size-none: 0;
-    --size-xs: #{math.div(vars.$sizeXs, $fontSize)}em;
-    --size-sm: #{math.div(vars.$sizeSm, $fontSize)}em;
-    --size-md: #{math.div(vars.$sizeMd, $fontSize)}em;
-    --size-lg: #{math.div(vars.$sizeLg, $fontSize)}em;
-    --size-bg: #{math.div(vars.$sizeBg, $fontSize)}em;
+    --size-xs: #{math.div(map.get($dimensions, 'sizeXs'), $fontSize)}em;
+    --size-sm: #{math.div(map.get($dimensions, 'sizeSm'), $fontSize)}em;
+    --size-md: #{math.div(map.get($dimensions, 'sizeMd'), $fontSize)}em;
+    --size-lg: #{math.div(map.get($dimensions, 'sizeLg'), $fontSize)}em;
+    --size-bg: #{math.div(map.get($dimensions, 'sizeBg'), $fontSize)}em;
 
-    --size-neg-xs: #{math.div(vars.$negXsWidth, $fontSize)}em;
-    --size-neg-sm: #{math.div(vars.$negSmWidth, $fontSize)}em;
-    --size-neg-md: #{math.div(vars.$negMdWidth, $fontSize)}em;
-    --size-neg-lg: #{math.div(vars.$negLgWidth, $fontSize)}em;
+    --size-neg-xs: #{math.div(map.get($dimensions, 'negXsWidth'), $fontSize)}em;
+    --size-neg-sm: #{math.div(map.get($dimensions, 'negSmWidth'), $fontSize)}em;
+    --size-neg-md: #{math.div(map.get($dimensions, 'negMdWidth'), $fontSize)}em;
+    --size-neg-lg: #{math.div(map.get($dimensions, 'negLgWidth'), $fontSize)}em;
 
-    --size-font-xxs: #{math.div(vars.$fontXxs, $fontSize)}em;
-    --size-font-xs: #{math.div(vars.$fontXs, $fontSize)}em;
-    --size-font-sm: #{math.div(vars.$fontSm, $fontSize)}em;
-    --size-font-md: #{math.div(vars.$fontMd, $fontSize)}em;
-    --size-font-lg: #{math.div(vars.$fontLg, $fontSize)}em;
-    --size-font-xl: #{math.div(vars.$fontXl, $fontSize)}em;
-    --size-font-xxl: #{math.div(vars.$fontXxl, $fontSize)}em;
-    --size-font-xxxl: #{math.div(vars.$fontXxxl, $fontSize)}em;
+    --size-font-xxs: #{math.div(map.get($dimensions, 'fontXxs'), $fontSize)}em;
+    --size-font-xs: #{math.div(map.get($dimensions, 'fontXs'), $fontSize)}em;
+    --size-font-sm: #{math.div(map.get($dimensions, 'fontSm'), $fontSize)}em;
+    --size-font-md: #{math.div(map.get($dimensions, 'fontMd'), $fontSize)}em;
+    --size-font-lg: #{math.div(map.get($dimensions, 'fontLg'), $fontSize)}em;
+    --size-font-xl: #{math.div(map.get($dimensions, 'fontXl'), $fontSize)}em;
+    --size-font-xxl: #{math.div(map.get($dimensions, 'fontXxl'), $fontSize)}em;
+    --size-font-xxxl: #{math.div(map.get($dimensions, 'fontXxxl'), $fontSize)}em;
 
-    --border-radius-small: #{math.div(vars.$borderRadiusSmall, $fontSize)}em;
-    --border-radius: #{math.div(vars.$borderRadius, $fontSize)}em;
-    --border-radius-medium: #{math.div(vars.$borderRadiusMedium, $fontSize)}em;
-    --responsive-threshold-md: vars.$responsiveThresholdMd;
+    --border-radius-small: #{math.div(map.get($dimensions, 'borderRadiusSmall'), $fontSize)}em;
+    --border-radius: #{math.div(map.get($dimensions, 'borderRadius'), $fontSize)}em;
+    --border-radius-medium: #{math.div(map.get($dimensions, 'borderRadiusMedium'), $fontSize)}em;
+    --responsive-threshold-md: map.get($dimensions, 'responsiveThresholdMd');
 
     --size-1px: #{math.div(1, $fontSize)}em;
     --size-2px: #{math.div(2, $fontSize)}em;

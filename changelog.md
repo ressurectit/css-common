@@ -1,5 +1,21 @@
 # Changelog
 
+## Version 1.3.0 (2024-06-04)
+
+### Feature
+
+- **misc**
+    - new `%root-scale` placeholder for `font-size: 1rem;` css property
+    - new `.root-scale` css class for `font-size: 1rem;` css property
+    - new `.reset-scale` alias css class for `.root-scale`
+    - new `.reset-zoom` alias css class for `.root-scale`
+- **mixins**
+    - updated `buildSizes` mixin
+        - now has second optional parameter which allows customization of *dimensions*
+- **vars**
+    - new `dimensions` map variable
+        - holds all default dimensions in form of map
+
 ## Version 1.2.0 (2024-06-04)
 
 ### Bug Fixes

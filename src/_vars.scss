@@ -30,6 +30,35 @@ $borderRadiusSmall: 2;
 $borderRadius: 4;
 $borderRadiusMedium: 8;
 
+$dimensions:
+(
+    sizeXs: $sizeXs,
+    sizeSm: $sizeSm,
+    sizeMd: $sizeMd,
+    sizeLg: $sizeLg,
+    sizeBg: $sizeBg,
+    negXsWidth: $negXsWidth,
+    negSmWidth: $negSmWidth,
+    negMdWidth: $negMdWidth,
+    negLgWidth: $negLgWidth,
+    fontXxs: $fontXxs,
+    fontXs: $fontXs,
+    fontSm: $fontSm,
+    fontMd: $fontMd,
+    fontLg: $fontLg,
+    fontXl: $fontXl,
+    fontXxl: $fontXxl,
+    fontXxxl: $fontXxxl,
+    rootMinFontSize: $rootMinFontSize,
+    rootMaxFontSize: $rootMaxFontSize,
+    rootMinFontSizeWidth: $rootMinFontSizeWidth,
+    rootMaxFontSizeWidth: $rootMaxFontSizeWidth,
+    responsiveThresholdMd: $responsiveThresholdMd,
+    borderRadiusSmall: $borderRadiusSmall,
+    borderRadius: $borderRadius,
+    borderRadiusMedium: $borderRadiusMedium,
+);
+
 $sizes: 
 (
     none: none,
