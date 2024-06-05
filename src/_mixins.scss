@@ -29,7 +29,8 @@
 
     @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 
     {
-        & 
+        &,
+        & .initial-zoom
         {
             font-size: $min-font-size;
 

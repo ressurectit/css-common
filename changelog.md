@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 1.4.0 (2024-06-05)
+
+### Feature
+
+- **mixins**
+    - updated `fluid-type` mixin
+        - now also generates nested `.initial-zoom` css class with same calculated font size
+
 ## Version 1.3.0 (2024-06-04)
 
 ### Feature
