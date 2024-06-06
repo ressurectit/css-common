@@ -93,6 +93,27 @@
     min-height: 0;
 }
 
+%flex-025
+{
+    flex: .25;
+    min-width: 0;
+    min-height: 0;
+}
+
+%flex-05
+{
+    flex: .5;
+    min-width: 0;
+    min-height: 0;
+}
+
+%flex-075
+{
+    flex: .75;
+    min-width: 0;
+    min-height: 0;
+}
+
 %flex-1
 {
     flex: 1;
@@ -154,9 +175,19 @@
     min-height: 0;
 }
 
+%align-self-start
+{
+    align-self: start;
+}
+
 %align-self-center
 {
     align-self: center;
+}
+
+%align-self-end
+{
+    align-self: end;
 }
 
 %align-self-stretch
@@ -189,6 +220,11 @@
     justify-self: end;
 }
 
+%justify-self-stretch
+{
+    justify-self: stretch;
+}
+
 %justify-content-start
 {
     justify-content: start;
@@ -204,9 +240,9 @@
     justify-content: end;
 }
 
-%justify-content-center
+%justify-content-stretch
 {
-    justify-content: center;
+    justify-content: stretch;
 }
 
 %justify-content-space-evenly
@@ -558,6 +594,21 @@
         @extend %flex-0;
     }
 
+    .flex-025
+    {
+        @extend %flex-025;
+    }
+
+    .flex-05
+    {
+        @extend %flex-05;
+    }
+
+    .flex-075
+    {
+        @extend %flex-075;
+    }
+
     .flex-1
     {
         @extend %flex-1;
@@ -603,9 +654,19 @@
         @extend %grid-first-cell;
     }
 
+    .align-self-start
+    {
+        @extend %align-self-start;
+    }
+
     .align-self-center
     {
         @extend %align-self-center;
+    }
+
+    .align-self-end
+    {
+        @extend %align-self-end;
     }
 
     .align-self-stretch
@@ -638,6 +699,11 @@
         @extend %justify-self-end;
     }
 
+    .justify-self-stretch
+    {
+        @extend %justify-self-stretch;
+    }
+
     .justify-content-start
     {
         @extend %justify-content-start;
@@ -653,9 +719,9 @@
         @extend %justify-content-end;
     }
 
-    .justify-content-center
+    .justify-content-stretch
     {
-        @extend %justify-content-center;
+        @extend %justify-content-stretch;
     }
 
     .justify-content-space-evenly

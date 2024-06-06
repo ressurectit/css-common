@@ -1,8 +1,28 @@
 # Changelog
 
+## Version 1.5.0 (2024-06-06)
+
+### Features
+
+- **misc**
+    - new `%flex-025` placeholder for `flex: .25;`, `min-width: 0;`, `min-height: 0;` css properties
+    - new `.flex-025` css class for `flex: .25;`, `min-width: 0;`, `min-height: 0;` css properties
+    - new `%flex-05` placeholder for `flex: .5;`, `min-width: 0;`, `min-height: 0;` css properties
+    - new `.flex-05` css class for `flex: .5;`, `min-width: 0;`, `min-height: 0;` css properties
+    - new `%flex-075` placeholder for `flex: .75;`, `min-width: 0;`, `min-height: 0;` css properties
+    - new `.flex-075` css class for `flex: .75;`, `min-width: 0;`, `min-height: 0;` css properties
+    - new `%align-self-start` placeholder for `align-self: start;` css property
+    - new `.align-self-start` css class for `align-self: start;` css property
+    - new `%align-self-end` placeholder for `align-self: end;` css property
+    - new `.align-self-end` css class for `align-self: end;` css property
+    - new `%justify-self-stretch` placeholder for `justify-self: stretch;` css property
+    - new `.justify-self-stretch` css class for `justify-self: stretch;` css property
+    - new `%justify-content-stretch` placeholder for `justify-content: stretch;` css property
+    - new `.justify-content-stretch` css class for `justify-content: stretch;` css property
+
 ## Version 1.4.0 (2024-06-05)
 
-### Feature
+### Features
 
 - **mixins**
     - updated `fluid-type` mixin
@@ -10,7 +30,7 @@
 
 ## Version 1.3.0 (2024-06-04)
 
-### Feature
+### Features
 
 - **misc**
     - new `%root-scale` placeholder for `font-size: 1rem;` css property
@@ -31,7 +51,7 @@
 - fixed `%thin-scrollbar` placeholder, now using only native css not *webkit* specials
 - fixed `thin-scrollbar-color` mixin, now using only native css not *webkit* specials
 
-### Feature
+### Features
 
 - **misc**
     - new `%grid-subgrid-rows` placeholder for `display: grid;`, `grid-template-rows: subgrid;` css properties
@@ -59,7 +79,7 @@
 
 ## Version 1.1.0 (2024-05-13)
 
-### Feature
+### Features
 
 - **misc**
     - new `%white-space-normal` alias placeholder for `%content-wrap`
@@ -74,7 +94,7 @@
 
 ## Version 1.0.0 (2024-02-06)
 
-### Feature
+### Features
 
 - new base sets of *misc* placeholder selectors
 - new `misc-css` *mixin* for generating misc styles
