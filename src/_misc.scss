@@ -161,6 +161,13 @@
     grid-template-rows: subgrid;
 }
 
+%grid-subgrid
+{
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+
 %grid-whole-row
 {
     grid-column: 1 / -1;
@@ -480,6 +487,16 @@
     overflow-y: scroll;
 }
 
+%overflow-horizontal-auto
+{
+    overflow-x: auto;
+}
+
+%overflow-horizontal-scroll
+{
+    overflow-x: scroll;
+}
+
 %table-container
 {
     overflow-x: auto;
@@ -642,6 +659,11 @@
     .grid-subgrid-rows
     {
         @extend %grid-subgrid-rows;
+    }
+
+    .grid-subgrid
+    {
+        @extend %grid-subgrid;
     }
 
     .grid-whole-row
@@ -949,6 +971,16 @@
     .overflow-vertical-scroll
     {
         @extend %overflow-vertical-scroll;
+    }
+
+    .overflow-horizontal-auto
+    {
+        @extend %overflow-horizontal-auto;
+    }
+
+    .overflow-horizontal-scroll
+    {
+        @extend %overflow-horizontal-scroll;
     }
 
     .table-container

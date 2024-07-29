@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 1.6.0 (2024-07-29)
+
+### Features
+
+- **misc**
+    - new `%grid-subgrid` placeholder for `display: grid; grid-template-columns: subgrid; grid-template-rows: subgrid;` css properties
+    - new `.grid-subgrid` css class for `display: grid; grid-template-columns: subgrid; grid-template-rows: subgrid;` css properties
+    - new `%overflow-horizontal-auto` placeholder for `overflow-x: auto;` css properties
+    - new `.overflow-horizontal-auto` css class for `overflow-x: auto;` css properties
+    - new `%overflow-horizontal-scroll` placeholder for `overflow-x: scroll;` css properties
+    - new `.overflow-horizontal-scroll` css class for `overflow-x: scroll;` css properties
+
 ## Version 1.5.0 (2024-06-06)
 
 ### Features
