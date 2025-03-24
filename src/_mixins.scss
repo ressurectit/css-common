@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use 'sass:math';
-@use 'vars';
+
+@use './vars';
 
 @mixin thin-scrollbar-color($color, $background: --color-transparent)
 {
@@ -15,30 +16,30 @@
     @return math.div($value, ($value * 0 + 1));
 }
 
-@function getSize($fontSize, $size)
+@function getSize($fontSize, $size, $fixed: false)
 {
-    @return #{math.div($size, strip-unit($fontSize))}em;
+    @return #{math.div($size, strip-unit($fontSize))}#{if($fixed == true, rem, em)};
 }
 
-@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) 
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size)
 {
     $u1: math.unit($min-vw);
     $u2: math.unit($max-vw);
     $u3: math.unit($min-font-size);
     $u4: math.unit($max-font-size);
 
-    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4
     {
         &,
         & .initial-zoom
         {
             font-size: $min-font-size;
 
-            @media screen and (min-width: $min-vw) 
+            @media screen and (min-width: $min-vw)
             {
                 font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
             }
-            @media screen and (min-width: $max-vw) 
+            @media screen and (min-width: $max-vw)
             {
                 font-size: $max-font-size;
             }
@@ -46,73 +47,356 @@
     }
 }
 
-@mixin buildSizes($fontSize, $dimensions: ())
+@mixin buildMarginCss($fontSize, $sizes)
 {
-    $dimensions: map.deep-merge(vars.$dimensions, $dimensions);
+    @each $sizeName, $size in $sizes
+    {
+        --size-margin-#{$sizeName}: #{getSize($fontSize, $size)};
+        --size-margin-fixed-#{$sizeName}: #{getSize($fontSize, $size, true)};
+    }
 
-    --color-transparent: transparet;
+    @each $sizeName, $size in $sizes
+    {
+        .margin-#{$sizeName}
+        {
+            margin: var(--size-margin-#{$sizeName});
 
-    --size-none: 0;
-    --size-xs: #{math.div(map.get($dimensions, 'sizeXs'), $fontSize)}em;
-    --size-sm: #{math.div(map.get($dimensions, 'sizeSm'), $fontSize)}em;
-    --size-md: #{math.div(map.get($dimensions, 'sizeMd'), $fontSize)}em;
-    --size-lg: #{math.div(map.get($dimensions, 'sizeLg'), $fontSize)}em;
-    --size-bg: #{math.div(map.get($dimensions, 'sizeBg'), $fontSize)}em;
+            &-fixed
+            {
+                margin: var(--size-margin-fixed-#{$sizeName});
+            }
+        }
 
-    --size-neg-xs: #{math.div(map.get($dimensions, 'negXsWidth'), $fontSize)}em;
-    --size-neg-sm: #{math.div(map.get($dimensions, 'negSmWidth'), $fontSize)}em;
-    --size-neg-md: #{math.div(map.get($dimensions, 'negMdWidth'), $fontSize)}em;
-    --size-neg-lg: #{math.div(map.get($dimensions, 'negLgWidth'), $fontSize)}em;
+        .margin-right-#{$sizeName}
+        {
+            margin-right: var(--size-margin-#{$sizeName});
 
-    --size-font-xxs: #{math.div(map.get($dimensions, 'fontXxs'), $fontSize)}em;
-    --size-font-xs: #{math.div(map.get($dimensions, 'fontXs'), $fontSize)}em;
-    --size-font-sm: #{math.div(map.get($dimensions, 'fontSm'), $fontSize)}em;
-    --size-font-md: #{math.div(map.get($dimensions, 'fontMd'), $fontSize)}em;
-    --size-font-lg: #{math.div(map.get($dimensions, 'fontLg'), $fontSize)}em;
-    --size-font-xl: #{math.div(map.get($dimensions, 'fontXl'), $fontSize)}em;
-    --size-font-xxl: #{math.div(map.get($dimensions, 'fontXxl'), $fontSize)}em;
-    --size-font-xxxl: #{math.div(map.get($dimensions, 'fontXxxl'), $fontSize)}em;
+            &-fixed
+            {
+                margin-right: var(--size-margin-fixed-#{$sizeName});
+            }
+        }
 
-    --border-radius-small: #{math.div(map.get($dimensions, 'borderRadiusSmall'), $fontSize)}em;
-    --border-radius: #{math.div(map.get($dimensions, 'borderRadius'), $fontSize)}em;
-    --border-radius-medium: #{math.div(map.get($dimensions, 'borderRadiusMedium'), $fontSize)}em;
-    --responsive-threshold-md: map.get($dimensions, 'responsiveThresholdMd');
+        .margin-left-#{$sizeName}
+        {
+            margin-left: var(--size-margin-#{$sizeName});
 
-    --size-1px: #{math.div(1, $fontSize)}em;
-    --size-2px: #{math.div(2, $fontSize)}em;
-    --size-3px: #{math.div(3, $fontSize)}em;
-    --size-4px: #{math.div(4, $fontSize)}em;
-    --size-5px: #{math.div(5, $fontSize)}em;
-    --size-6px: #{math.div(6, $fontSize)}em;
-    --size-7px: #{math.div(7, $fontSize)}em;
-    --size-8px: #{math.div(8, $fontSize)}em;
-    --size-9px: #{math.div(9, $fontSize)}em;
-    --size-10px: #{math.div(10, $fontSize)}em;
-    --size-11px: #{math.div(11, $fontSize)}em;
-    --size-12px: #{math.div(12, $fontSize)}em;
-    --size-13px: #{math.div(13, $fontSize)}em;
-    --size-14px: #{math.div(14, $fontSize)}em;
-    --size-15px: #{math.div(15, $fontSize)}em;
-    --size-16px: #{math.div(16, $fontSize)}em;
-    --size-17px: #{math.div(17, $fontSize)}em;
-    --size-18px: #{math.div(18, $fontSize)}em;
-    --size-19px: #{math.div(19, $fontSize)}em;
-    --size-20px: #{math.div(20, $fontSize)}em;
-    --size-21px: #{math.div(21, $fontSize)}em;
-    --size-22px: #{math.div(22, $fontSize)}em;
-    --size-23px: #{math.div(23, $fontSize)}em;
-    --size-24px: #{math.div(24, $fontSize)}em;
+            &-fixed
+            {
+                margin-left: var(--size-margin-fixed-#{$sizeName});
+            }
+        }
+
+        .margin-top-#{$sizeName}
+        {
+            margin-top: var(--size-margin-#{$sizeName});
+
+            &-fixed
+            {
+                margin-top: var(--size-margin-fixed-#{$sizeName});
+            }
+        }
+
+        .margin-bottom-#{$sizeName}
+        {
+            margin-bottom: var(--size-margin-#{$sizeName});
+
+            &-fixed
+            {
+                margin-bottom: var(--size-margin-fixed-#{$sizeName});
+            }
+        }
+
+        .margin-horizontal-#{$sizeName}
+        {
+            margin-left: var(--size-margin-#{$sizeName});
+            margin-right: var(--size-margin-#{$sizeName});
+
+            &-fixed
+            {
+                margin-left: var(--size-margin-fixed-#{$sizeName});
+                margin-right: var(--size-margin-fixed-#{$sizeName});
+            }
+        }
+
+        .margin-vertical-#{$sizeName}
+        {
+            margin-top: var(--size-margin-#{$sizeName});
+            margin-bottom: var(--size-margin-#{$sizeName});
+
+            &-fixed
+            {
+                margin-top: var(--size-margin-fixed-#{$sizeName});
+                margin-bottom: var(--size-margin-fixed-#{$sizeName});
+            }
+        }
+    }
+}
+
+@mixin buildPaddingCss($fontSize, $sizes)
+{
+    @each $sizeName, $size in $sizes
+    {
+        --size-padding-#{$sizeName}: #{getSize($fontSize, $size)};
+        --size-padding-fixed-#{$sizeName}: #{getSize($fontSize, $size, true)};
+    }
+
+    @each $sizeName, $size in $sizes
+    {
+        .padding-#{$sizeName}
+        {
+            padding: var(--size-padding-#{$sizeName});
+
+            &-fixed
+            {
+                padding: var(--size-padding-fixed-#{$sizeName});
+            }
+        }
+
+        .padding-right-#{$sizeName}
+        {
+            padding-right: var(--size-padding-#{$sizeName});
+
+            &-fixed
+            {
+                padding-right: var(--size-padding-fixed-#{$sizeName});
+            }
+        }
+
+        .padding-left-#{$sizeName}
+        {
+            padding-left: var(--size-padding-#{$sizeName});
+
+            &-fixed
+            {
+                padding-left: var(--size-padding-fixed-#{$sizeName});
+            }
+        }
+
+        .padding-top-#{$sizeName}
+        {
+            padding-top: var(--size-padding-#{$sizeName});
+
+            &-fixed
+            {
+                padding-top: var(--size-padding-fixed-#{$sizeName});
+            }
+        }
+
+        .padding-bottom-#{$sizeName}
+        {
+            padding-bottom: var(--size-padding-#{$sizeName});
+
+            &-fixed
+            {
+                padding-bottom: var(--size-padding-fixed-#{$sizeName});
+            }
+        }
+
+        .padding-horizontal-#{$sizeName}
+        {
+            padding-left: var(--size-padding-#{$sizeName});
+            padding-right: var(--size-padding-#{$sizeName});
+
+            &-fixed
+            {
+                padding-left: var(--size-padding-fixed-#{$sizeName});
+                padding-right: var(--size-padding-fixed-#{$sizeName});
+            }
+        }
+
+        .padding-vertical-#{$sizeName}
+        {
+            padding-top: var(--size-padding-#{$sizeName});
+            padding-bottom: var(--size-padding-#{$sizeName});
+
+            &-fixed
+            {
+                padding-top: var(--size-padding-fixed-#{$sizeName});
+                padding-bottom: var(--size-padding-fixed-#{$sizeName});
+            }
+        }
+    }
+}
+
+@mixin buildBorderRadiusCss($type, $sizes)
+{
+    @each $sizeName, $size in $sizes
+    {
+        --size-borderRadius-#{$sizeName}: #{getSize($fontSize, $size)};
+        --size-borderRadius-fixed-#{$sizeName}: #{getSize($fontSize, $size, true)};
+    }
+
+    @each $sizeName, $size in $sizes
+    {
+        .border-round-#{$sizeName}
+        {
+            border-radius: var(--size-borderRadius-#{$sizeName});
+
+            &-fixed
+            {
+                border-radius: var(--size-borderRadius-fixed-#{$sizeName});
+            }
+        }
+
+        .top-border-round
+        {
+            border-top-left-radius: var(--size-borderRadius-#{$sizeName});
+            border-top-right-radius: var(--size-borderRadius-#{$sizeName});
+
+            &-fixed
+            {
+                border-top-right-radius: var(--size-borderRadius-fixed-#{$sizeName});
+                border-bottom-right-radius: var(--size-borderRadius-fixed-#{$sizeName});
+            }
+        }
+
+        .bottom-border-round
+        {
+            border-bottom-left-radius: var(--size-borderRadius-#{$sizeName});
+            border-bottom-right-radius: var(--size-borderRadius-#{$sizeName});
+
+            &-fixed
+            {
+                border-top-right-radius: var(--size-borderRadius-fixed-#{$sizeName});
+                border-bottom-right-radius: var(--size-borderRadius-fixed-#{$sizeName});
+            }
+        }
+
+        .left-border-round
+        {
+            border-top-left-radius: var(--size-borderRadius-#{$sizeName});
+            border-bottom-left-radius: var(--size-borderRadius-#{$sizeName});
+
+            &-fixed
+            {
+                border-top-right-radius: var(--size-borderRadius-fixed-#{$sizeName});
+                border-bottom-right-radius: var(--size-borderRadius-fixed-#{$sizeName});
+            }
+        }
+
+        .right-border-round
+        {
+            border-top-right-radius: var(--size-borderRadius-#{$sizeName});
+            border-bottom-right-radius: var(--size-borderRadius-#{$sizeName});
+
+            &-fixed
+            {
+                border-top-right-radius: var(--size-borderRadius-fixed-#{$sizeName});
+                border-bottom-right-radius: var(--size-borderRadius-fixed-#{$sizeName});
+            }
+        }
+
+        .top-left-border-round
+        {
+            border-top-left-radius: var(--size-borderRadius-#{$sizeName});
+            
+            &-fixed
+            {
+                border-top-left-radius: var(--size-borderRadius-fixed-#{$sizeName});
+            }
+        }
+
+        .bottom-left-border-round
+        {
+            border-bottom-left-radius: var(--size-borderRadius-#{$sizeName});
+
+            &-fixed
+            {
+                border-bottom-left-radius: var(--size-borderRadius-fixed-#{$sizeName});
+            }
+        }
+
+        .top-right-border-round
+        {
+            border-top-right-radius: var(--size-borderRadius-#{$sizeName});
+
+            &-fixed
+            {
+                border-top-right-radius: var(--size-borderRadius-fixed-#{$sizeName});
+            }
+        }
+
+        .bottom-right-border-round
+        {
+            border-bottom-right-radius: var(--size-borderRadius-#{$sizeName});
+
+            &-fixed
+            {
+                border-bottom-right-radius: var(--size-borderRadius-fixed-#{$sizeName});
+            }
+        }
+    }
+}
+
+@mixin buildFontSizeCss($fontSize, $sizes)
+{
+    @each $sizeName, $size in $sizes
+    {
+        --size-font-#{$sizeName}: #{getSize($fontSize, $size)};
+        --size-font-fixed-#{$sizeName}: #{getSize($fontSize, $size, true)};
+    }
+
+    @each $sizeName, $size in $sizes
+    {
+        .#{$sizeName}-text
+        {
+            font-size: var(--size-padding-#{$sizeName});
+
+            &-fixed
+            {
+                font-size: var(--size-padding-fixed-#{$sizeName});
+            }
+        }
+    }
+}
+
+@mixin buildFixedSizes($fontSize)
+{
+    --size-1px: #{getSize($fontSize, 1,)};
+    --size-2px: #{getSize($fontSize, 2,)};
+    --size-3px: #{getSize($fontSize, 3,)};
+    --size-4px: #{getSize($fontSize, 4,)};
+    --size-5px: #{getSize($fontSize, 5,)};
+    --size-6px: #{getSize($fontSize, 6,)};
+    --size-7px: #{getSize($fontSize, 7,)};
+    --size-8px: #{getSize($fontSize, 8,)};
+    --size-9px: #{getSize($fontSize, 9,)};
+    --size-10px: #{getSize($fontSize, 10)};
+    --size-11px: #{getSize($fontSize, 11)};
+    --size-12px: #{getSize($fontSize, 12)};
+    --size-13px: #{getSize($fontSize, 13)};
+    --size-14px: #{getSize($fontSize, 14)};
+    --size-15px: #{getSize($fontSize, 15)};
+    --size-16px: #{getSize($fontSize, 16)};
+    --size-17px: #{getSize($fontSize, 17)};
+    --size-18px: #{getSize($fontSize, 18)};
+    --size-19px: #{getSize($fontSize, 19)};
+    --size-20px: #{getSize($fontSize, 20)};
+    --size-21px: #{getSize($fontSize, 21)};
+    --size-22px: #{getSize($fontSize, 22)};
+    --size-23px: #{getSize($fontSize, 23)};
+    --size-24px: #{getSize($fontSize, 24)};
+}
+
+@mixin buildSizes($fontSize, $sizes)
+{
+    @each $sizeName, $size in $sizes
+    {
+        --size-#{$sizeName}: #{getSize($fontSize, $size)};
+        --size-fixed-#{$sizeName}: #{getSize($fontSize, $size, true)};
+    }
 }
 
 @mixin css-reset
 {
     *,
     *::before,
-    *::after 
+    *::after
     {
         box-sizing: border-box;
     }
- 
+
     *
     {
         margin: 0;

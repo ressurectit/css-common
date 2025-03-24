@@ -5,11 +5,6 @@ $sizeMd: 15;
 $sizeLg: 20;
 $sizeBg: $sizeLg;
 
-$negXsWidth: -4;
-$negSmWidth: -10;
-$negMdWidth: -15;
-$negLgWidth: -20;
-
 $fontXxs: 10;
 $fontXs: 12;
 $fontSm: 14;
@@ -19,52 +14,24 @@ $fontXl: 20;
 $fontXxl: 22;
 $fontXxxl: 28;
 
-$rootMinFontSize: 12px;
-$rootMaxFontSize: 16px;
-$rootMinFontSizeWidth: 500px;
-$rootMaxFontSizeWidth: 950px;
-
-$responsiveThresholdMd: 800px;
-
-$borderRadiusSmall: 2;
-$borderRadius: 4;
-$borderRadiusMedium: 8;
-
-$dimensions:
+$fontSizes:
 (
-    sizeXs: $sizeXs,
-    sizeSm: $sizeSm,
-    sizeMd: $sizeMd,
-    sizeLg: $sizeLg,
-    sizeBg: $sizeBg,
-    negXsWidth: $negXsWidth,
-    negSmWidth: $negSmWidth,
-    negMdWidth: $negMdWidth,
-    negLgWidth: $negLgWidth,
-    fontXxs: $fontXxs,
-    fontXs: $fontXs,
-    fontSm: $fontSm,
-    fontMd: $fontMd,
-    fontLg: $fontLg,
-    fontXl: $fontXl,
-    fontXxl: $fontXxl,
-    fontXxxl: $fontXxxl,
-    rootMinFontSize: $rootMinFontSize,
-    rootMaxFontSize: $rootMaxFontSize,
-    rootMinFontSizeWidth: $rootMinFontSizeWidth,
-    rootMaxFontSizeWidth: $rootMaxFontSizeWidth,
-    responsiveThresholdMd: $responsiveThresholdMd,
-    borderRadiusSmall: $borderRadiusSmall,
-    borderRadius: $borderRadius,
-    borderRadiusMedium: $borderRadiusMedium,
+    extra-extra-small: $fontXxs,
+    extra-small: $fontXs,
+    small: $fontSm,
+    medium: $fontMd,
+    large: $fontLg,
+    extra-large: $fontXl,
+    extra-extra-large: $fontXxl,
+    extra-extra-extra-large: $fontXxxl,
 );
 
 $sizes: 
 (
-    none: none,
-    extra-small: xs,
-    small: sm,
-    medium: md,
-    large: lg,
-    big: bg
+    none: 0,
+    extra-small: $sizeXs,
+    small: $sizeSm,
+    medium: $sizeMd,
+    large: $sizeLg,
+    big: $sizeBg,
 );

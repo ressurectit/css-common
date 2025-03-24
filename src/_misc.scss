@@ -514,6 +514,8 @@
 
 @mixin misc-css
 {
+    --color-transparent: transparet;
+
     // ---------------------- MISCELANEOUS ----------------------
 
     //TODO: breaking change => reset-scale and reset-zoom change to fluid-type value
@@ -996,33 +998,6 @@
     .transition-all-400
     {
         @extend %transition-all-400;
-    }
-
-    .file-upload.input-group
-    {
-        overflow: hidden;
-        position: relative;
-
-        &>input[type="text"]
-        {
-            font-size: 1em;
-            height: 34px;
-            padding: 6px 12px;
-            border-bottom-right-radius: 4px !important;
-            border-top-right-radius: 4px !important;
-            z-index: 0;
-        }
-
-        &>input[type="file"]
-        {
-            cursor: pointer;
-            height: 100%;
-            left: 0;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-        }
     }
 
     @media print

@@ -1,5 +1,28 @@
 # Changelog
 
+## Version 2.0.0 (2025-03-24)
+
+### Features
+
+- new `buildMarginCss` mixin, which allows generating css variables for margin and css classes for margins of various sizes according provided map
+- new `buildPaddingCss` mixin, which allows generating css variables for padding and css classes for paddings of various sizes according provided map
+- new `buildBorderRadiusCss` mixin, which allows generating css variables for border radius and css classes for border radiuses of various sizes according provided map
+- new `buildSizes` mixin, which allows generating css variables with sizes using provided map
+- new `buildFontSizeCss` mixin, which allows generating css variables for font size and css classes for font sizes of various sizes according provided map
+- new `fontSizes` map scss variable, with default values for fong sizes
+- updated `misc-css` mixin, now generates also `--color-transparent` css variable
+- updated `getSize` function, now takes optional third parameter `fixed`, which allows function to get size in `rem` units, relative to root
+
+### BREAKING CHANGES
+
+- removed `.file-upload.input-group` css class
+- updated `buildSizes` mixin
+    - removed `--responsive-threshold-md` variable
+    - removed `--border-radius-small`, `--border-radius-medium`, `--border-radius`, use new mixin `TODO`
+    - removed `--color-transparent`, use `misc-css`
+- renamed `buildSizes` mixin into `buildFixedSizes` and it take only `fontSize` as parameter
+- removed `negXsWidth`, `negSmWidth`, `negMdWidth`, `negLgWidth`, `rootMinFontSize`, `rootMaxFontSize`, `rootMinFontSizeWidth`, `rootMaxFontSizeWidth`, `responsiveThresholdMd`, `borderRadiusSmall`, `borderRadius`, `borderRadiusMedium`, `dimensions`,  scss variables
+
 ## Version 1.6.0 (2024-07-29)
 
 ### Features
