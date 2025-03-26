@@ -329,6 +329,48 @@
     }
 }
 
+@mixin buildGapsCss($fontSize, $sizes)
+{
+    @each $sizeName, $size in $sizes
+    {
+        --size-gap-#{$sizeName}: #{getSize($fontSize, $size)};
+        --size-gap-fixed-#{$sizeName}: #{getSize($fontSize, $size, true)};
+    }
+
+    @each $sizeName, $size in $sizes
+    {
+        .column-gap-#{$sizeName}
+        {
+            column-gap: var(--size-gap-#{$sizeName});
+
+            &-fixed
+            {
+                column-gap: var(--size-gap-fixed-#{$sizeName});
+            }
+        }
+
+        .row-gap-#{$sizeName}
+        {
+            row-gap: var(--size-gap-#{$sizeName});
+
+            &-fixed
+            {
+                row-gap: var(--size-gap-fixed-#{$sizeName});
+            }
+        }
+
+        .gap-#{$sizeName}
+        {
+            gap: var(--size-gap-#{$sizeName});
+
+            &-fixed
+            {
+                gap: var(--size-gap-fixed-#{$sizeName});
+            }
+        }
+    }
+}
+
 @mixin buildFontSizeCss($fontSize, $sizes)
 {
     @each $sizeName, $size in $sizes

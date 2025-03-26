@@ -1,12 +1,13 @@
 # Changelog
 
-## Version 2.0.0 (2025-03-24)
+## Version 2.0.0 (2025-03-26)
 
 ### Features
 
 - new `buildMarginCss` mixin, which allows generating css variables for margin and css classes for margins of various sizes according provided map
 - new `buildPaddingCss` mixin, which allows generating css variables for padding and css classes for paddings of various sizes according provided map
 - new `buildBorderRadiusCss` mixin, which allows generating css variables for border radius and css classes for border radiuses of various sizes according provided map
+- new `buildGapsCss` mixin, which allows generating css variables for gaps and css classes for gaps of various sizes according provided map
 - new `buildSizes` mixin, which allows generating css variables with sizes using provided map
 - new `buildFontSizeCss` mixin, which allows generating css variables for font size and css classes for font sizes of various sizes according provided map
 - new `fontSizes` map scss variable, with default values for fong sizes
