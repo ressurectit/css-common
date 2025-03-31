@@ -395,30 +395,30 @@
 
 @mixin buildFixedSizes($fontSize)
 {
-    --size-1px: #{getSize($fontSize, 1,)};
-    --size-2px: #{getSize($fontSize, 2,)};
-    --size-3px: #{getSize($fontSize, 3,)};
-    --size-4px: #{getSize($fontSize, 4,)};
-    --size-5px: #{getSize($fontSize, 5,)};
-    --size-6px: #{getSize($fontSize, 6,)};
-    --size-7px: #{getSize($fontSize, 7,)};
-    --size-8px: #{getSize($fontSize, 8,)};
-    --size-9px: #{getSize($fontSize, 9,)};
-    --size-10px: #{getSize($fontSize, 10)};
-    --size-11px: #{getSize($fontSize, 11)};
-    --size-12px: #{getSize($fontSize, 12)};
-    --size-13px: #{getSize($fontSize, 13)};
-    --size-14px: #{getSize($fontSize, 14)};
-    --size-15px: #{getSize($fontSize, 15)};
-    --size-16px: #{getSize($fontSize, 16)};
-    --size-17px: #{getSize($fontSize, 17)};
-    --size-18px: #{getSize($fontSize, 18)};
-    --size-19px: #{getSize($fontSize, 19)};
-    --size-20px: #{getSize($fontSize, 20)};
-    --size-21px: #{getSize($fontSize, 21)};
-    --size-22px: #{getSize($fontSize, 22)};
-    --size-23px: #{getSize($fontSize, 23)};
-    --size-24px: #{getSize($fontSize, 24)};
+    --size-1px: #{getSize($fontSize, 1, true)};
+    --size-2px: #{getSize($fontSize, 2, true)};
+    --size-3px: #{getSize($fontSize, 3, true)};
+    --size-4px: #{getSize($fontSize, 4, true)};
+    --size-5px: #{getSize($fontSize, 5, true)};
+    --size-6px: #{getSize($fontSize, 6, true)};
+    --size-7px: #{getSize($fontSize, 7, true)};
+    --size-8px: #{getSize($fontSize, 8, true)};
+    --size-9px: #{getSize($fontSize, 9, true)};
+    --size-10px: #{getSize($fontSize, 10, true)};
+    --size-11px: #{getSize($fontSize, 11, true)};
+    --size-12px: #{getSize($fontSize, 12, true)};
+    --size-13px: #{getSize($fontSize, 13, true)};
+    --size-14px: #{getSize($fontSize, 14, true)};
+    --size-15px: #{getSize($fontSize, 15, true)};
+    --size-16px: #{getSize($fontSize, 16, true)};
+    --size-17px: #{getSize($fontSize, 17, true)};
+    --size-18px: #{getSize($fontSize, 18, true)};
+    --size-19px: #{getSize($fontSize, 19, true)};
+    --size-20px: #{getSize($fontSize, 20, true)};
+    --size-21px: #{getSize($fontSize, 21, true)};
+    --size-22px: #{getSize($fontSize, 22, true)};
+    --size-23px: #{getSize($fontSize, 23, true)};
+    --size-24px: #{getSize($fontSize, 24, true)};
 }
 
 @mixin buildSizes($fontSize, $sizes)
