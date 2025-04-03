@@ -1,3 +1,4 @@
+@use 'sass:meta';
 @use 'sass:map';
 @use 'sass:math';
 
@@ -9,6 +10,11 @@
     {
         scrollbar-color: var($color) var($background);
     }
+}
+
+@function is-map($var)
+{
+    @return meta.type-of($var) == 'map';
 }
 
 @function strip-unit($value)

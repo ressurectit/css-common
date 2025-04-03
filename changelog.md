@@ -1,9 +1,10 @@
 # Changelog
 
-## Version 2.0.0 (2025-03-26)
+## Version 2.0.0 (2025-04-03)
 
 ### Features
 
+- new `is-map` function, which tests whether provided variable is of type `map`
 - new `buildMarginCss` mixin, which allows generating css variables for margin and css classes for margins of various sizes according provided map
 - new `buildPaddingCss` mixin, which allows generating css variables for padding and css classes for paddings of various sizes according provided map
 - new `buildBorderRadiusCss` mixin, which allows generating css variables for border radius and css classes for border radiuses of various sizes according provided map
