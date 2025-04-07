@@ -4,6 +4,7 @@
 
 ### Features
 
+
 - new `buildCssVars` mixin, which allows generating css variables from map
 - new `is-map` function, which tests whether provided variable is of type `map`
 - new `buildMarginCss` mixin, which allows generating css variables for margin and css classes for margins of various sizes according provided map
@@ -15,6 +16,11 @@
 - new `fontSizes` map scss variable, with default values for fong sizes
 - updated `misc-css` mixin, now generates also `--color-transparent` css variable
 - updated `getSize` function, now takes optional third parameter `fixed`, which allows function to get size in `rem` units, relative to root
+- **misc**
+    - new `%align-items-start` placeholder for `align-items: start;` css properties
+    - new `.align-items-start` css class for `align-items: start;` css properties
+    - new `%align-items-end` placeholder for `align-items: end;` css properties
+    - new `.align-items-end` css class for `align-items: end;` css properties
 
 ### BREAKING CHANGES
 
