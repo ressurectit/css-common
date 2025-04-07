@@ -27,6 +27,21 @@
     @return #{math.div($size, strip-unit($fontSize))}#{if($fixed == true, rem, em)};
 }
 
+@mixin buildCssVars($prefix, $map)
+{
+    @each $propName, $propVal in $map
+    {
+        @if is-map($propVal)
+        {
+            @include buildCssVars(#{$prefix}-#{$propName}, $propVal);
+        }
+        @else
+        {
+            #{$prefix}-#{$propName}: #{$propVal};
+        }
+    }
+}
+
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size)
 {
     $u1: math.unit($min-vw);

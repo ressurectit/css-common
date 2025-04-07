@@ -4,6 +4,7 @@
 
 ### Features
 
+- new `buildCssVars` mixin, which allows generating css variables from map
 - new `is-map` function, which tests whether provided variable is of type `map`
 - new `buildMarginCss` mixin, which allows generating css variables for margin and css classes for margins of various sizes according provided map
 - new `buildPaddingCss` mixin, which allows generating css variables for padding and css classes for paddings of various sizes according provided map
