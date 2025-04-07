@@ -21,7 +21,7 @@
 - removed `.file-upload.input-group` css class
 - updated `buildSizes` mixin
     - removed `--responsive-threshold-md` variable
-    - removed `--border-radius-small`, `--border-radius-medium`, `--border-radius`, use new mixin `TODO`
+    - removed `--border-radius-small`, `--border-radius-medium`, `--border-radius`, use new mixin `buildBorderRadiusCss`
     - removed `--color-transparent`, use `misc-css`
 - renamed `buildSizes` mixin into `buildFixedSizes` and it take only `fontSize` as parameter
 - removed `negXsWidth`, `negSmWidth`, `negMdWidth`, `negLgWidth`, `rootMinFontSize`, `rootMaxFontSize`, `rootMinFontSizeWidth`, `rootMaxFontSizeWidth`, `responsiveThresholdMd`, `borderRadiusSmall`, `borderRadius`, `borderRadiusMedium`, `dimensions`,  scss variables
