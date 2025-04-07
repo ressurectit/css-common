@@ -240,7 +240,7 @@
     }
 }
 
-@mixin buildBorderRadiusCss($type, $sizes)
+@mixin buildBorderRadiusCss($fontSize, $sizes)
 {
     @each $sizeName, $size in $sizes
     {
