@@ -404,11 +404,11 @@
     {
         .#{$sizeName}-text
         {
-            font-size: var(--size-padding-#{$sizeName});
+            font-size: var(--size-font-#{$sizeName});
 
             &-fixed
             {
-                font-size: var(--size-padding-fixed-#{$sizeName});
+                font-size: var(--size-font-fixed-#{$sizeName});
             }
         }
     }
