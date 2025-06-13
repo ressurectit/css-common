@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 2.0.0 (2025-04-03)
+## Version 2.0.0 (2025-06-13)
 
 ### Features
 
@@ -14,6 +14,7 @@
 - new `buildSizes` mixin, which allows generating css variables with sizes using provided map
 - new `buildFontSizeCss` mixin, which allows generating css variables for font size and css classes for font sizes of various sizes according provided map
 - new `fontSizes` map scss variable, with default values for fong sizes
+- new `in-layer` mixin, which allows generating nested css in layer
 - updated `misc-css` mixin, now generates also `--color-transparent` css variable
 - updated `getSize` function, now takes optional third parameter `fixed`, which allows function to get size in `rem` units, relative to root
 - **misc**
@@ -21,6 +22,10 @@
     - new `.align-items-start` css class for `align-items: start;` css properties
     - new `%align-items-end` placeholder for `align-items: end;` css properties
     - new `.align-items-end` css class for `align-items: end;` css properties
+    - new `%align-content-center` placeholder for `align-content: center;` css properties
+    - new `.align-content-center` css class for `align-content: center;` css properties
+    - new `%align-content-end` placeholder for `align-content: end;` css properties
+    - new `.align-content-end` css class for `align-content: end;` css properties
 
 ### BREAKING CHANGES
 

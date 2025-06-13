@@ -204,7 +204,17 @@
 
 %align-content-start
 {
-    align-content: flex-start;
+    align-content: start;
+}
+
+%align-content-center
+{
+    align-content: center;
+}
+
+%align-content-end
+{
+    align-content: end;
 }
 
 %align-items-center
@@ -711,6 +721,16 @@
     .align-content-start
     {
         @extend %align-content-start;
+    }
+
+    .align-content-center
+    {
+        @extend %align-content-center;
+    }
+
+    .align-content-end
+    {
+        @extend %align-content-end;
     }
 
     .align-items-center

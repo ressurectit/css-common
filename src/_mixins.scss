@@ -4,6 +4,20 @@
 
 @use './vars';
 
+@mixin in-layer($layerName)
+{
+    @at-root
+    {
+        @layer #{$layerName}
+        {
+            &
+            {
+                @content;
+            }
+        }
+    }
+}
+
 @mixin thin-scrollbar-color($color, $background: --color-transparent)
 {
     .thin-scrollbar
