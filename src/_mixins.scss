@@ -274,7 +274,7 @@
             }
         }
 
-        .top-border-round
+        .top-border-round-#{$sizeName}
         {
             border-top-left-radius: var(--size-borderRadius-#{$sizeName});
             border-top-right-radius: var(--size-borderRadius-#{$sizeName});
@@ -286,7 +286,7 @@
             }
         }
 
-        .bottom-border-round
+        .bottom-border-round-#{$sizeName}
         {
             border-bottom-left-radius: var(--size-borderRadius-#{$sizeName});
             border-bottom-right-radius: var(--size-borderRadius-#{$sizeName});
@@ -298,7 +298,7 @@
             }
         }
 
-        .left-border-round
+        .left-border-round-#{$sizeName}
         {
             border-top-left-radius: var(--size-borderRadius-#{$sizeName});
             border-bottom-left-radius: var(--size-borderRadius-#{$sizeName});
@@ -310,7 +310,7 @@
             }
         }
 
-        .right-border-round
+        .right-border-round-#{$sizeName}
         {
             border-top-right-radius: var(--size-borderRadius-#{$sizeName});
             border-bottom-right-radius: var(--size-borderRadius-#{$sizeName});
@@ -322,7 +322,7 @@
             }
         }
 
-        .top-left-border-round
+        .top-left-border-round-#{$sizeName}
         {
             border-top-left-radius: var(--size-borderRadius-#{$sizeName});
             
@@ -332,7 +332,7 @@
             }
         }
 
-        .bottom-left-border-round
+        .bottom-left-border-round-#{$sizeName}
         {
             border-bottom-left-radius: var(--size-borderRadius-#{$sizeName});
 
@@ -342,7 +342,7 @@
             }
         }
 
-        .top-right-border-round
+        .top-right-border-round-#{$sizeName}
         {
             border-top-right-radius: var(--size-borderRadius-#{$sizeName});
 
@@ -352,7 +352,7 @@
             }
         }
 
-        .bottom-right-border-round
+        .bottom-right-border-round-#{$sizeName}
         {
             border-bottom-right-radius: var(--size-borderRadius-#{$sizeName});
 

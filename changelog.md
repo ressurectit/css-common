@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 2.0.1 (2025-11-13)
+
+### Bug Fixes
+
+- fixed `*-border-round-*` classes, now containing suffixes based on size
+
 ## Version 2.0.0 (2025-06-13)
 
 ### Features
